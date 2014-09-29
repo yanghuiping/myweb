@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yhp.myweb.dao.demo.IUserMapper">
+	<!-- 通过主键查询 -->
+	<select id="findUserById" parameterType="Long" resultType="UserPO">
+		select id as id,username as userName,password as passWord from t_user where id = #{value}
+	</select>
+	
+	<!-- 分页查询数据 -->
+	<select id="getPages" parameterType="Map" resultType="UserPO">
+		select id as id,username as userName,password as passWord from t_user
+		where 1=1
+		<if test="userName != null">
+				and username=#{userName}
+		</if>
+		<if test="passWord != null">
+				and password=#{passWord}
+		</if>
+		limit #{startIndex} , #{endIndex}
+	</select>
+	<select id="getPagesCount" parameterType="Map" resultType="Long">
+		select count(1) from t_user
+		where 1=1
+		<if test="userName != null">
+				and username=#{userName}
+		</if>
+		<if test="passWord != null">
+				and password=#{passWord}
+		</if>
+	</select>
+</mapper>

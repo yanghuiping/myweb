@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+	<description>demo Project tag library</description>	
+	<display-name>demo</display-name>
+	<tlib-version>1.1</tlib-version>
+	<short-name>demo</short-name>
+	<tag>
+		<name>page</name>
+		<tag-class>com.yhp.myweb.common.web.support.tag.PageTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<description>The Form id</description>
+			<name>formId</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	
+		<attribute>
+			<description>The page pageNoParamName value</description>
+			<name>pageNoParamName</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	
+		<attribute>
+			<description>The page totalCount value</description>
+			<name>totalCount</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	
+		<attribute>
+			<description>The page currentPageNo value</description>
+			<name>currentPageNo</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	
+		<attribute>
+			<description>The page totalPageCount value</description>
+			<name>totalPageCount</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description>The page totalPageCount value</description>
+			<name>pageSize</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+</taglib>
