@@ -8,7 +8,7 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context-3.0.xsd
            http://www.springframework.org/schema/mvc
-           http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+           http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
            default-autowire="byName">
            
 	<!--对web包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
@@ -57,6 +57,8 @@
 	    <mvc:interceptor>  
 	        <mvc:mapping path="/user/*"/>
 	        <mvc:mapping path="/*"/>
+	        <mvc:exclude-mapping path="/css/**"/>
+	        <mvc:exclude-mapping path="/images/**"/>
 	        <!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->
 	        <bean class="com.yhp.myweb.interceptor.LoginInterceptor"/>
 	    </mvc:interceptor>
